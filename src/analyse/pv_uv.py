@@ -55,19 +55,20 @@ grouped_by_time_pv = count_uv(user_id_and_time)
 grouped_by_time_uv = count_pv(user_id_and_time)
 
 # 创建画布，指定子图的布局
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))  # 1 行 2 列的子图
+# 1 行 2 列的子图 大小为 14x6
+fig, (uv, pv) = plt.subplots(1, 2, figsize=(14, 6))
 
 # 绘制 UV 图
-ax1.plot(grouped_by_time_uv['time'], grouped_by_time_uv['count'], linestyle='--', color='g')
-ax1.set_title("每日 UV 统计")
-ax1.set_xlabel("日期")
-ax1.set_ylabel("UV 数量")
+uv.plot(grouped_by_time_uv['time'], grouped_by_time_uv['count'], linestyle='--', color='g')
+uv.set_title("每日 UV 统计")
+uv.set_xlabel("日期")
+uv.set_ylabel("UV 数量")
 
 # 绘制 PV 图
-ax2.plot(grouped_by_time_pv['time'], grouped_by_time_pv['count'], linestyle='--', color='b')
-ax2.set_title("每日 PV 统计")
-ax2.set_xlabel("日期")
-ax2.set_ylabel("PV 数量")
+pv.plot(grouped_by_time_pv['time'], grouped_by_time_pv['count'], linestyle='--', color='b')
+pv.set_title("每日 PV 统计")
+pv.set_xlabel("日期")
+pv.set_ylabel("PV 数量")
 
 # 自动调整子图间距
 plt.tight_layout()
