@@ -40,6 +40,8 @@ def count_pv(data, user_id="user_id", time="time"):
     drop_duplicates_data.loc[:, "count"] = 1
     return drop_duplicates_data.groupby(drop_duplicates_data[time])["count"].sum().reset_index()
 
+plt.rcParams['font.sans-serif'] = ['SimHei']  # 使用黑体
+plt.rcParams['axes.unicode_minus'] = False
 
 __file_path = "../../file/tianchi_mobile_recommend_train_user.csv"
 __file_name = "tianchi_mobile_recommend_train_user"

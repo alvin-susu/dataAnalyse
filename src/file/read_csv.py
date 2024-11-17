@@ -1,8 +1,8 @@
-import os
-import pandas as pd
-import matplotlib.pyplot as plt
 import logging
+import os
+
 import numpy as np
+import pandas as pd
 
 # 解析文件
 '''
@@ -47,10 +47,10 @@ def analyse_csv_hdf5(file_path, file_name):
 
 def analyse_csv_pickle(file_path, file_name):
     """
-    使用二进制存储解析内容
-    :param file_path:
-    :param file_name:
-    :return:
+    使用hdf5存储解析内容（速度比较慢？）
+    :param file_name: 文件名
+    :param file_path: 文件路径
+    :return: 文件内容
     """
     __file_cache_path = f"../../file/{file_name}"
     # 解析文件路径
